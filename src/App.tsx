@@ -5,8 +5,6 @@ import {Home} from './pages/HomeScreen';
 import {News} from './pages/NewsScreen';
 import LoginScreen from './pages/LoginScreen';
 
-import './App.css';
-
 
 function App() {
   return (

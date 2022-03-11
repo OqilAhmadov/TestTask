@@ -16,9 +16,7 @@ const LoginScreen: React.FC = () => {
         <UserForm/> 
         : 
        <Home/>
-      
     }
-     
     </>
   );
 };

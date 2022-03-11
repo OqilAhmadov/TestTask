@@ -15,7 +15,7 @@ export default function NewsCard() {
     const login = () => {
         axios.get(`https://gorest.co.in/public/v1/posts?page=${pagination}`)
             .then((res: any) => {
-              setData(res.data.data.slice(1, 4));
+              setData(res.data.data.slice(1, 5));
             }).catch((error: string) => {
                 console.log("error", error);
             });
@@ -30,6 +30,7 @@ export default function NewsCard() {
 
   return (
     <>
+      <div style={{ display: 'flex',justifyContent: 'center', height: '100%' }} className='wrapper'>
         {data.map((item: any) => (
 
           <Card key={item.id} sx={{ maxWidth: 260, m: 4 }}>
@@ -51,7 +52,8 @@ export default function NewsCard() {
           </Card>
 
         ))}
-    <Stack spacing={6}>
+      </div>
+    <Stack spacing={6} ml={6}>
         <Pagination
           onChange={(event: any) => handleChange(event.target.textContent)}
           count={10} color="primary" />

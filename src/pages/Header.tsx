@@ -22,7 +22,6 @@ const Header: React.FC = () => {
     navigate("/login");
   };
   const user = useSelector((state: any) => state.user);
-  console.log(user);
 
   return (
     <React.Fragment>

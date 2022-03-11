@@ -10,7 +10,7 @@ import UserForm from "../components/UserForm";
 
 
 
-export const Home = () => {
+export const Home: React.FC = () => {
   const dispatch = useDispatch();
   let navigate: any = useNavigate();
 

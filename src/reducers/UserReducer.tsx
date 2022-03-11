@@ -1,27 +1,38 @@
 
-
-let defaultState = {
-  username: null, 
-  password: null,
+enum ActionType {
+  USER_LOGIN = "USER_LOGIN",
+  USER_LOGOUT = "USER_LOGOUT",
 }
 
-export const UserReducer = (state: any = defaultState, action: any) => {
+type Action =
+  | {
+      type: ActionType.USER_LOGIN;
+    }
+  | {
+      type: ActionType.USER_LOGOUT;
+    };
+
+let defaultState = {
+  username: null,
+  password: null,
+};
+
+export const UserReducer = (state: any = defaultState, action: Action) => {
   switch (action.type) {
-    case "USER_LOGIN":
+    case ActionType.USER_LOGIN:
       return {
         ...state,
-        user: state = localStorage.getItem("userInfo") ,
+        user: (state = localStorage.getItem("userInfo")),
       };
-      case "USER_LOGOUT":
-        return {
-          ...state,
-          user: state = {
-            username: null,
-            password: null,
-          } ,
-        }
+    case ActionType.USER_LOGOUT:
+      return {
+        ...state,
+        user: (state = {
+          username: null,
+          password: null,
+        }),
+      };
     default:
       return state;
   }
-}
-
+};
