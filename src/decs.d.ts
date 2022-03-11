@@ -1,0 +1,1 @@
+declare module "react-leaflet" // e.g declare module 'react-leaflet'
