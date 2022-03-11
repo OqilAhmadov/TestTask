@@ -27,7 +27,7 @@ const UserForm: React.FC = () => {
 
   let admin = {
     username: "admin",
-    password: "admin123",
+    password: "admin12345",
   };
 
   const dispatch = useDispatch();
